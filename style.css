@@ -1,0 +1,60 @@
+/* default: day mode */
+body.day-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.day-mode .navbar,
+.day-mode .card,
+.day-mode .modal-content {
+  background-color: #f8f9fa; 
+  color: #000;
+}
+
+/* night mode */
+body.night-mode {
+  background-color: #000000;
+  color: #ADD8E6;
+}
+
+.night-mode .navbar,
+.night-mode .card,
+.night-mode .modal-content {
+  background-color: #333333;
+  color: #ADD8E6;
+}
+
+.night-mode .list-group-item {
+  background-color: #333333 !important;
+  color: #ADD8E6 !important;
+}
+
+/* hovering */
+.card {
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: scale(1.02);
+}
+
+footer {
+  background-color: #e9ecef;
+}
+.day-mode footer {
+  background-color: #e9ecef;
+  color: #000;
+}
+.night-mode footer {
+  background-color: #000000;
+  color: #ADD8E6;
+}
+
+#map {
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+.night-mode .list-group-item {
+  background-color: #333333 !important;
+  color: #ADD8E6 !important;
+}

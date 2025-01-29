@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEB422 - Assignment 1</title>
+  <link rel="icon" type="image/png" href="sun.png">
+
+  <!-- Bootstrap CSS -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  >
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  
+  <!-- Leaflet CSS -->
+  <link 
+    rel="stylesheet" 
+    href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+  >
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="day-mode">
+  <!-- navigation bar -->
+  <nav class="navbar navbar-expand-lg mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Weather Search App</a>
+      <button class="btn btn-outline-secondary" id="toggleModeBtn">
+        Switch to Night Mode
+      </button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- current location weather -->
+    <div class="row mb-4" id="currentLocationWeather" style="display: none;">
+      <div class="col-12">
+        <h4>Your Current Location Weather</h4>
+        <div class="card">
+          <div class="card-body" id="currentWeatherCardBody">
+            <!-- populated by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- searching part -->
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <input 
+          type="text" 
+          id="searchInput" 
+          class="form-control"
+          placeholder="Enter city (e.g. London) or city,country (e.g. London,GB)"
+        >
+      </div>
+      <div class="col-md-2">
+        <button id="searchBtn" class="btn btn-primary w-100">Search</button>
+      </div>
+      <div class="col-md-4 text-danger d-flex align-items-center">
+        <span id="errorMessage"></span>
+      </div>
+    </div>
+
+    <!-- unit and mode of the data -->
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label for="unitSelect" class="form-label">Unit of Measurement:</label>
+        <select id="unitSelect" class="form-select">
+          <option value="metric">Celsius</option>
+          <option value="imperial">Fahrenheit</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="dataModeSelect" class="form-label">Data Mode:</label>
+        <select id="dataModeSelect" class="form-select">
+          <option value="json" selected>JSON</option>
+          <option value="xml">XML</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- results -->
+    <div class="row" id="resultsContainer"></div>
+
+    <!-- pagination -->
+    <div class="d-flex justify-content-center my-4" id="paginationControls" style="display: none;">
+      <button id="prevPageBtn" class="btn btn-secondary me-3">Previous</button>
+      <span class="align-self-center">
+        Page <span id="currentPageNum">1</span> of <span id="totalPagesNum">1</span>
+      </span>
+      <button id="nextPageBtn" class="btn btn-secondary ms-3">Next</button>
+    </div>
+
+    <!-- map -->
+    <div class="mb-4" id="mapSection" style="display: none;">
+      <h4>Map of Search Results</h4>
+      <p>Click a marker to select the city you want.</p>
+      <div id="map" style="height: 450px; width: 100%;"></div>
+    </div>
+  </div>
+
+  <!-- modal popup window for details-->
+  <div 
+    class="modal fade" 
+    id="cityDetailModal" 
+    tabindex="-1" 
+    aria-labelledby="cityDetailModalLabel" 
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 id="cityDetailModalLabel" class="modal-title">City Detail</h5>
+          <button 
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body" id="modalBodyContent">
+          <!-- populated by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="mt-5 text-center py-3">
+    <p>Connect with me:</p>
+    <a href="https://www.linkedin.com/in/radmehr-behzadfar-programming/" target="_blank" rel="noopener noreferrer">
+      <img 
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+        alt="LinkedIn" 
+        style="width: 35px;"
+      >
+    </a>
+    <a href="https://github.com/RadmehrBehzadfar" target="_blank" rel="noopener noreferrer">
+      <img 
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+        alt="GitHub"
+        style="width: 35px;"
+      >
+    </a>
+  </footer>
+
+  <!-- IMPORTANT: Place scripts at the end so DOM is fully loaded first -->
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <!-- Main JS -->
+  <script src="main.js"></script>
+</body>
+</html>
