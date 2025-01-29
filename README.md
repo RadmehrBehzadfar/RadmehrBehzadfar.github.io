@@ -56,7 +56,7 @@ A web application to search and display real-time weather information using Open
 ---
 
 ## 🌎 Live Demo  
-👉 **[View Live Project](https://RadmehrBehzadfar.github.io/)**  
+👉 **[View Live Project](https://RadmehrBehzadfar.github.io/) github**  
 
 ---
 
