@@ -32,5 +32,5 @@ A web application to search and display real-time weather information using Open
 
 ### 1️⃣ Clone the Repository  
 ```bash
-git clone https://github.com/yourusername/weather-search-app.git
+git clone https://github.com/RadmehrBehzadfar/RadmehrBehzadfar.github.io.git
 cd weather-search-app
